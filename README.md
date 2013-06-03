@@ -1,4 +1,3 @@
-squidcard-achievements
-======================
+# Squidcard Achievements
 
-Achievemet-System for SquidCards
+Achievement-System for SquidCards
