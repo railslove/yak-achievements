@@ -9,6 +9,5 @@ class CreateAchievedAchievements < ActiveRecord::Migration
 
     add_index :achieved_achievements, :achievement_id
     add_index :achieved_achievements, :yet_another_kard_id
-    add_index :achieved_achievements, [:yet_another_kard_id, :achievement_id], unique: true, name: :achieved_achievement_per_yak_index
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603223035) do
+ActiveRecord::Schema.define(:version => 20130610145252) do
 
   create_table "achieved_achievements", :force => true do |t|
     t.integer  "achievement_id",      :null => false
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20130603223035) do
   end
 
   add_index "achieved_achievements", ["achievement_id"], :name => "index_achieved_achievements_on_achievement_id"
-  add_index "achieved_achievements", ["yet_another_kard_id", "achievement_id"], :name => "achieved_achievement_per_yak_index", :unique => true
   add_index "achieved_achievements", ["yet_another_kard_id"], :name => "index_achieved_achievements_on_yet_another_kard_id"
 
   create_table "achievements", :force => true do |t|
@@ -35,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20130603223035) do
   end
 
   add_index "achievements", ["resource_id"], :name => "index_achievements_on_resource_id"
+
+  create_table "kard_checkins", :force => true do |t|
+    t.integer  "resource_id",         :null => false
+    t.integer  "yet_another_kard_id", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "kard_checkins", ["resource_id"], :name => "index_kard_checkins_on_resource_id"
+  add_index "kard_checkins", ["yet_another_kard_id"], :name => "index_kard_checkins_on_yet_another_kard_id"
 
   create_table "resources", :force => true do |t|
     t.string   "key",        :null => false
