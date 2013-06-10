@@ -1,4 +1,4 @@
 class AchievedAchievement < ActiveRecord::Base
   belongs_to :achievment
-  belongs_to :squid_card
+  belongs_to :yet_another_kard
 end

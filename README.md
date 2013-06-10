@@ -1,3 +1,5 @@
-# Squidcard Achievements
+# YAK Achievements
+Achievement-System for YAKs
 
-Achievement-System for SquidCards
+#### More to come
+

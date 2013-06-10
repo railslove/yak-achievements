@@ -1,4 +1,4 @@
-SquidcardAchievements::Application.routes.draw do
+YetAnotherKardAchievements::Application.routes.draw do
   # root to: "achievements#checkin", via: :post, format: :json
   post :checkin, to: "resrource#checkin", format: :json, as: :checkin
   # The priority is based upon order of creation:

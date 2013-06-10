@@ -1,4 +1,4 @@
-class SquidCard < ActiveRecord::Base
+class YetAnotherKard < ActiveRecord::Base
   has_many :achieved_achievements
   has_many :achievements, through: :achieved_achievements
 

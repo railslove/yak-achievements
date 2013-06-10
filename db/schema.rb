@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(:version => 20130603223035) do
 
   create_table "achieved_achievements", :force => true do |t|
-    t.integer  "achievement_id", :null => false
-    t.integer  "squid_card_id",  :null => false
+    t.integer  "achievement_id",      :null => false
+    t.integer  "yet_another_kard_id", :null => false
     t.string   "value"
     t.datetime "achieved_at"
   end
 
   add_index "achieved_achievements", ["achievement_id"], :name => "index_achieved_achievements_on_achievement_id"
-  add_index "achieved_achievements", ["squid_card_id", "achievement_id"], :name => "index_achieved_achievements_on_squid_card_id_and_achievement_id", :unique => true
-  add_index "achieved_achievements", ["squid_card_id"], :name => "index_achieved_achievements_on_squid_card_id"
+  add_index "achieved_achievements", ["yet_another_kard_id", "achievement_id"], :name => "achieved_achievement_per_yak_index", :unique => true
+  add_index "achieved_achievements", ["yet_another_kard_id"], :name => "index_achieved_achievements_on_yet_another_kard_id"
 
   create_table "achievements", :force => true do |t|
     t.string   "title",       :null => false
@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(:version => 20130603223035) do
 
   add_index "resources", ["key"], :name => "index_resources_on_key", :unique => true
 
-  create_table "squid_cards", :force => true do |t|
+  create_table "yet_another_kards", :force => true do |t|
     t.string   "uid",        :limit => 40, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
 
-  add_index "squid_cards", ["uid"], :name => "index_squid_cards_on_uid", :unique => true
+  add_index "yet_another_kards", ["uid"], :name => "index_yet_another_kards_on_uid", :unique => true
 
 end

@@ -4,7 +4,7 @@ class Achievement < ActiveRecord::Base
   belongs_to :resource
 
   has_many :achieved_achievements
-  has_many :squid_cards, through: :achieved_achievements
+  has_many :yet_another_kards, through: :achieved_achievements
 
   attr_accessible :title, :resource
 
