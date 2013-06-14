@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %title= "YetAnotherKardAchievements"
+    %meta{ :name => "viewport", :content => "width=device-width" }
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "http://js.pusher.com/2.0/pusher.min.js"
+    = csrf_meta_tags
+    / %link{rel: 'shortcut icon', href: '/favicon.png'}
+  %body{:class => [controller_name], :id => "#{controller_name}_#{action_name}"}
+    .l-header
+      .l-header--content
+        =link_to root_path, :class => 'm-logo' do
+          = "YetAnotherKardAchievements"
+    .l-content
+      / .flash_messages
+      /   - flash.each do |key, value|
+      /     .flash{ :class => key.to_s }
+      /       = value
+      = yield
+    %header
