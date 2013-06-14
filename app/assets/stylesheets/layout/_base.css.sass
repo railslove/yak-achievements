@@ -1,0 +1,22 @@
+.l-header
+  background-color: $black
+  border-bottom: 1px solid $gray
+  padding: 5px 0
+  margin-bottom: $margin
+  .l-header--content
+    +layout_width($content-width)
+    position: relative
+.l-content
+  +layout_width($content-width)
+  position: relative
+  .l-content--main
+    width: $content-width - $sidebar-with - $margin
+    float: left
+    margin-right: $margin
+    padding: $padding
+    +box-sizing(border-box)
+  .l-content--sidebar
+    width: $sidebar-with
+    float: right
+    padding: $padding
+    +box-sizing(border-box)

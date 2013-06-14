@@ -1,4 +1,4 @@
- class ResourcesController < ApplicationController
+class ResourcesController < ApplicationController
   before_filter :load_resource
   before_filter :load_kart, only: :checkin
   skip_before_filter :verify_authenticity_token, only: :checkin
@@ -8,7 +8,8 @@
     unless @resource.nil? or @kard.nil?
       # Save checkin
       @kard.resources << @resource
-
+      # Push a notification (example)
+      # Pusher['yak'].trigger('new_checkin', {:message => 'BlaBlubBla'})
       send_response(checkins: @kard.resources.where(id: @resource.id).count)
     else
       errors = {}
