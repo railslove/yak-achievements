@@ -9,7 +9,7 @@ gem 'pg'
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-
+  gem 'compass-rails'
   gem 'uglifier'
 end
 
