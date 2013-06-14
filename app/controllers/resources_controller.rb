@@ -29,8 +29,6 @@
 
   def load_kart
     @kard = YetAnotherKard.find_or_create_by_uid params[:yak_uid] unless params[:yak_uid].nil?
-
-    Rails.logger.debug @kard.inspect
   end
 
   def send_response(response)
