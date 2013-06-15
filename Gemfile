@@ -18,6 +18,6 @@ end
 gem 'jquery-rails'
 gem 'haml'
 
-gem 'nested_set'
+gem 'hirb'
 
 gem 'quiet_assets', :group => :development

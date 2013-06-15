@@ -11,26 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610145252) do
+ActiveRecord::Schema.define(:version => 20130615093113) do
 
   create_table "achieved_achievements", :force => true do |t|
-    t.integer  "achievement_id",      :null => false
-    t.integer  "yet_another_kard_id", :null => false
-    t.string   "value"
-    t.datetime "achieved_at"
+    t.integer "achievement_id",      :null => false
+    t.integer "yet_another_kard_id", :null => false
   end
 
   add_index "achieved_achievements", ["achievement_id"], :name => "index_achieved_achievements_on_achievement_id"
   add_index "achieved_achievements", ["yet_another_kard_id"], :name => "index_achieved_achievements_on_yet_another_kard_id"
 
   create_table "achievements", :force => true do |t|
-    t.string   "title",       :null => false
-    t.integer  "resource_id", :null => false
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "title",            :null => false
+    t.integer  "resource_id",      :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "settings"
+    t.string   "achievement_type"
+    t.text     "description"
   end
 
   add_index "achievements", ["resource_id"], :name => "index_achievements_on_resource_id"
@@ -49,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130610145252) do
     t.string   "key",        :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   add_index "resources", ["key"], :name => "index_resources_on_key", :unique => true

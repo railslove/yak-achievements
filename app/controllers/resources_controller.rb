@@ -10,6 +10,11 @@ class ResourcesController < ApplicationController
       @kard.resources << @resource
       # Push a notification (example)
       # Pusher['yak'].trigger('new_checkin', {:message => 'BlaBlubBla'})
+
+      # Process achievements
+      @resource.achievements.each { |achievement| achievement.process_achievement(@kard) }
+
+
       send_response(checkins: @kard.resources.where(id: @resource.id).count)
     else
       errors = {}
