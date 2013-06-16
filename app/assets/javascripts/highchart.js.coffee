@@ -12,19 +12,25 @@ $ ->
 
     yAxis:
       title:
-        text: "Anzahl Checkins"
+        text: "Checkins"
+    xAxis:
+      labels:
+          format: '{value}Uhr'
 
     series: [
       {
       name: "Coffee"
       data: coffee
+      color: '#785200'
       },
       {
         name: "Meat"
         data: meat
+        color: '#FF4800'
       },
       {
         name: "Veggie"
         data: veggie
+        color: '#6ED500'
       },
     ]
