@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @achieved_achievements = Achievement.all
+    @achieved_achievements = AchievedAchievement.all
   end
 
   def status

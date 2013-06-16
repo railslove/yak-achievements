@@ -1,19 +1,13 @@
 .l-content--main.m-box
-  #achievements
-    %h2.m-headline Achievements
-    - achievements.each do |achievement|
-      = render 'achievement', {achievement: achievement, achieved: (@achieved_achievements.include? achievement)}
-
+  %h2.m-headline Absolut Numbers
+  .chart-container
 .l-content--sidebar.m-box
   %h2.m-headline Achievements
   %ul.m-achivement-list{data: {bahaviour: "pusher_list"}}
-    / - @achieved_achievements.each do |achieved_achievement|
-    /   %li.m-achivement
-    /     = image_tag("achivement.png", class: 'm-achivement--icon')
-    /     .m-achivement--headline= achieved_achievement.yet_another_kard.uid
-    /     .m-achivement--text= achieved_achievement.achievement.title
-    - 5.times do |i|
+    / - Achievement.order('created_at desc').first(7).each do |achievement|
+    - @achieved_achievements.each do |achieved_achievement|
       %li.m-achivement
-        = image_tag("achivement.png", class: 'm-achivement--icon')
-        .m-achivement--headline= "#{i*6}31#{i}762#{i}162#{i*7}"
-        .m-achivement--text= "20 Kaffee in einer Stunde, wow!"
+        = image_tag("coffee.png", class: 'm-achivement--icon')
+        .m-achivement--headline= achieved_achievement.yet_another_kard.uid
+        .m-achivement--text= achieved_achievement.achievement.title
+        .m-achivement--text= achieved_achievement.achievement.description
