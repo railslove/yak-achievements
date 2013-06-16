@@ -1,7 +1,7 @@
 $ ->
   coffee = $(".chart-container").data('coffee')
-  coffee = $(".chart-container").data('coffee')
-  coffee = $(".chart-container").data('coffee')
+  meat = $(".chart-container").data('meat')
+  veggie = $(".chart-container").data('veggie')
 
   $(".chart-container").highcharts
     chart:
@@ -14,7 +14,8 @@ $ ->
       title:
         text: "Anzahl Checkins"
 
-    series: [{
+    series: [
+      {
       name: "Coffee"
       data: coffee
       },
