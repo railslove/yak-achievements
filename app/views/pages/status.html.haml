@@ -1,0 +1,25 @@
+.l-content--main.m-box
+  #achievements
+    - unless @kard.achievements.empty?
+      %h2.m-headline Achieved Achievements
+      - @kard.achievements.each do |achievement|
+        = render 'achievement', {achievement: achievement, achieved: true}
+
+
+    %h2.m-headline Achievements
+    - @achievements.each do |achievement|
+      = render 'achievement', {achievement: achievement, achieved: false} unless @kard.achievements.include? achievement
+
+/ .l-content--sidebar.m-box
+/   %h2.m-headline Achievements
+/   %ul.m-achivement-list{data: {bahaviour: "pusher_list"}}
+/     / - @achieved_achievements.each do |achieved_achievement|
+/     /   %li.m-achivement
+/     /     = image_tag("achivement.png", class: 'm-achivement--icon')
+/     /     .m-achivement--headline= achieved_achievement.yet_another_kard.uid
+/     /     .m-achivement--text= achieved_achievement.achievement.title
+/     - 5.times do |i|
+/       %li.m-achivement
+/         = image_tag("achivement.png", class: 'm-achivement--icon')
+/         .m-achivement--headline= "#{i*6}31#{i}762#{i}162#{i*7}"
+/         .m-achivement--text= "20 Kaffee in einer Stunde, wow!"

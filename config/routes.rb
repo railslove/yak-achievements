@@ -1,8 +1,10 @@
 YetAnotherKardAchievements::Application.routes.draw do
-  get :home, to: "pages#home", as: 'home'
-
   root to: "pages#home"
-  post :checkin, to: "resources#checkin", format: :json, as: :checkin
+
+  get :home,              to: "pages#home",   as: :home
+  get "status/:yak_uid",  to: "pages#status", as: :status
+
+  post :checkin,          to: "resources#checkin", format: :json, as: :checkin
 
 
 end

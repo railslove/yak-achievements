@@ -5,6 +5,7 @@ r4 = Resource.create! name: "Entrace"
 r5 = Resource.create! name: "Hacktrack"
 r6 = Resource.create! name: "Foodstation (Meat)"
 r7 = Resource.create! name: "FoodStation (Veggie)"
+Resource.create! name: "Status-Monitor", key: 'status-monitor'
 
 a1 = Achievement.create! title: "CARNIVORE!",               description: "I hate Descriptions! They are the WURST!", achievement_type: 'counter'
 a1.resources << r6

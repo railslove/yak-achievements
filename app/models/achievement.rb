@@ -21,6 +21,8 @@ class Achievement < ActiveRecord::Base
   protected
 
   def process_counter(yak)
+    new_achievement = false
+
     # Already Unlocked?
     return if self.yet_another_kards.include? yak
 
@@ -32,11 +34,15 @@ class Achievement < ActiveRecord::Base
       # if self.resource.yet_another_kards.where(id: yak.id).count == settings[:count]
         self.yet_another_kards << yak
         logger.info "Achievement UNLOCKED! #{self.title} -> #{yak.uid}"
+
+        new_achievement = true
       end
     else
       # Counter-Type, but no Count-Limit given => first occurens unlocks achievement
       logger.info "Achievement UNLOCKED! #{self.title} -> #{yak.uid}"
       self.yet_another_kards << yak
     end
+
+    new_achievement
   end
 end

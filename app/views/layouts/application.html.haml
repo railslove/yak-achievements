@@ -4,8 +4,6 @@
     %title= "YetAnotherKardAchievements"
     %meta{ :name => "viewport", :content => "width=device-width" }
     = stylesheet_link_tag "application", :media => "all"
-    = javascript_include_tag "application"
-    = javascript_include_tag "http://js.pusher.com/2.0/pusher.min.js"
     = csrf_meta_tags
     / %link{rel: 'shortcut icon', href: '/favicon.png'}
   %body{:class => [controller_name], :id => "#{controller_name}_#{action_name}"}
@@ -20,3 +18,7 @@
       /       = value
       = yield
     %header
+
+  = javascript_include_tag "http://js.pusher.com/2.0/pusher.min.js"
+  = javascript_include_tag "application"
+  = content_for(:javascript)

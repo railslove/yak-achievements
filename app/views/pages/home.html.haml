@@ -1,7 +1,11 @@
 .l-content--main.m-box
-  %h2.m-headline Drinks
+  #achievements
+    %h2.m-headline Achievements
+    - achievements.each do |achievement|
+      = render 'achievement', {achievement: achievement, achieved: (@achieved_achievements.include? achievement)}
+
 .l-content--sidebar.m-box
-  %h2.m-headline Achivements
+  %h2.m-headline Achievements
   %ul.m-achivement-list{data: {bahaviour: "pusher_list"}}
     / - @achieved_achievements.each do |achieved_achievement|
     /   %li.m-achivement

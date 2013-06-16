@@ -8,12 +8,17 @@ class ResourcesController < ApplicationController
     unless @resource.nil? or @kard.nil?
       # Save checkin
       @kard.resources << @resource
-      # Push a notification (example)
-      # Pusher['yak'].trigger('new_checkin', {:message => 'BlaBlubBla'})
 
       # Process achievements
-      @resource.achievements.each { |achievement| achievement.process_achievement(@kard) }
+      @resource.achievements.each do |achievement|
+        # Trigger Pusher if new Achievement has been unlocked
+        if achievement.process_achievement(@kard)
+          Pusher.trigger "yak", 'new_achievement', {yak:  @kard, achieved_achievements: @kard.achievements.last}
+        end
+      end
 
+      # Send Response to Channel
+      Pusher.trigger(@resource.key, 'checkin', {yak_uid: @kard.uid})
 
       send_response(checkins: @kard.resources.where(id: @resource.id).count)
     else
