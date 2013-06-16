@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   def home
     @achieved_achievements = AchievedAchievement.last(5)
-    @drinks = Resource.find_by_name("Coffee and other Drinks").absolute_numbers_for_today
+
+    @coffee = Resource.find_by_name("Coffee and other Drinks").absolute_numbers_for_today
+    @meat = Resource.find_by_name("Foodstation (Meat)").absolute_numbers_for_today
+    @veggie = Resource.find_by_name("FoodStation (Veggie)").absolute_numbers_for_today
   end
 
   def status
