@@ -10,9 +10,11 @@ $ ->
   pusher = new Pusher("7075132451181dcab88f")
   channel = pusher.subscribe("yak")
 
-  channel.bind "new_checkin", (data) ->
+  channel.bind "new_achievement", (data) ->
     $item = $list.children().first().clone()
-    $item.find(".m-achivement--headline").text(data.message)
+    $item.find(".m-achivement--headline").text(data.headline)
+    $item.find(".m-achivement--text").text(data.text)
+    # $item.find(".m-achivement--icon").attr('src,', "/assets/#{data.type}.png")
     $list.prepend($item)
 
   $(".chart-container").highcharts
