@@ -17,6 +17,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
+gem "highcharts-rails"
 
 gem 'hirb'
 
