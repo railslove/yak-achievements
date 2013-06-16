@@ -6,5 +6,4 @@ YetAnotherKardAchievements::Application.routes.draw do
 
   post :checkin,          to: "resources#checkin", format: :json, as: :checkin
 
-
 end

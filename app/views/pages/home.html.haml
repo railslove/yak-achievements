@@ -1,6 +1,6 @@
 .l-content--main.m-box
   %h2.m-headline Absolut Numbers
-  .chart-container
+  .chart-container{ data: {drinks: @drinks.to_json} }
 .l-content--sidebar.m-box
   %h2.m-headline Achievements
   %ul.m-achivement-list{data: {bahaviour: "pusher_list"}}
