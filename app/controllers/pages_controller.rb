@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @coffee = Resource.find_by_short("coffee").absolute_numbers_for_today
     @meat = Resource.find_by_short("meat").absolute_numbers_for_today
     @veggie = Resource.find_by_short("veggie").absolute_numbers_for_today
+    @drink = Resource.find_by_short("drink").absolute_numbers_for_today
   end
 
   def status
