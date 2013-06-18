@@ -19,6 +19,7 @@ class ResourcesController < ApplicationController
 
       # Send Response to Channel
       Pusher.trigger(@resource.key, 'checkin', {yak_uid: @kard.uid})
+      Pusher.trigger('yak', 'checkin', {yak_uid: @kard.uid})
 
       send_response(checkins: @kard.resources.where(id: @resource.id).count)
     else

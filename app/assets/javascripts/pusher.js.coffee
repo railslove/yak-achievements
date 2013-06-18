@@ -1,11 +1,15 @@
 $ ->
-  Pusher.log = (message) ->
-    window.console.log message  if window.console and window.console.log
+  # Pusher.log = (message) ->
+  #   window.console.log message  if window.console and window.console.log
 
   $achievements = $('#achievements')
   pusher = new Pusher("7075132451181dcab88f")
   status_channel = pusher.subscribe("status-monitor")
   checkin_channel = pusher.subscribe("yak")
+
+  checkin_channel.bind "checkin", (data) ->
+    location.reload(true)
+
 
   $list = $('.m-achievement-list')
   checkin_channel.bind "new_achievement", (data) ->
