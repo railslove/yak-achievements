@@ -7,14 +7,18 @@
     &:last-child
       border-bottom: none
       margin-bottom: 0
-.m-achivement
+.m-achievement
   +pie-clearfix
   padding-bottom: 5px
-  .m-achivement--icon
+  color: $gray
+  .m-achievement--icon
     float: left
-    margin-right: $padding
     width: 55px
-  .m-achivement--headline
-    font-size: 24px
-  .m-achivement--text
+    font-size: 30px
+    padding: 5px
+  .m-achievement--title
+    font-size: 22px
+  .m-achievement--text
     font-size: 12px
+  &.as-achieved
+    color: $white

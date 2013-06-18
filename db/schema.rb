@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616093659) do
+ActiveRecord::Schema.define(:version => 20130618085932) do
 
   create_table "achieved_achievements", :force => true do |t|
     t.integer "achievement_id",      :null => false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20130616093659) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
+    t.string   "short"
   end
 
   add_index "resources", ["key"], :name => "index_resources_on_key", :unique => true

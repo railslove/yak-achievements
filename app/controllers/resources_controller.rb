@@ -13,7 +13,7 @@ class ResourcesController < ApplicationController
       @resource.achievements.each do |achievement|
         # Trigger Pusher if new Achievement has been unlocked
         if achievement.process_achievement(@kard)
-          Pusher.trigger "yak", 'new_achievement', {yak:  @kard, achieved_achievements: @kard.achievements.last}
+          Pusher.trigger "yak", 'new_achievement', {yak:  @kard.uid, short: @kard.achievements.last.short, title: @kard.achievements.last.title}
         end
       end
 

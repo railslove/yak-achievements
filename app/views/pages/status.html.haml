@@ -1,14 +1,8 @@
 .l-content--main.m-box
   #achievements
-    - unless @kard.achievements.empty?
-      %h2.m-headline Achieved Achievements
-      - @kard.achievements.each do |achievement|
-        = render 'achievement', {achievement: achievement, achieved: true}
-
-
     %h2.m-headline Achievements
     - @achievements.each do |achievement|
-      = render 'achievement', {achievement: achievement, achieved: false} unless @kard.achievements.include? achievement
+      = render 'achievement', {achievement: achievement, achieved: achievement.yet_another_kards.include?(@kard)}
 
 / .l-content--sidebar.m-box
 /   %h2.m-headline Achievements

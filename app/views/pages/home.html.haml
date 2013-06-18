@@ -3,11 +3,10 @@
   .chart-container{ data: {coffee: @coffee.to_json, meat: @meat.to_json, veggie: @veggie.to_json} }
 .l-content--sidebar.m-box
   %h2.m-headline Achievements
-  %ul.m-achivement-list{data: {bahaviour: "pusher_list"}}
+  %ul.m-achievement-list{data: {bahaviour: "pusher_list"}}
     / - Achievement.order('created_at desc').first(7).each do |achievement|
     - @achieved_achievements.each do |achieved_achievement|
-      %li.m-achivement
-        = image_tag("coffee.png", class: 'm-achivement--icon')
-        .m-achivement--headline= achieved_achievement.yet_another_kard.uid
-        .m-achivement--text= achieved_achievement.achievement.title
-        .m-achivement--text= achieved_achievement.achievement.description
+      %li.m-achievement
+        %i.m-achievement--icon{class: "icon-#{achieved_achievement.achievement.resources.first.short}"}
+        .m-achievement--title= achieved_achievement.yet_another_kard.uid
+        .m-achievement--text= achieved_achievement.achievement.title

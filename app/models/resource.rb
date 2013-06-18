@@ -7,7 +7,7 @@ class Resource < ActiveRecord::Base
   has_many :kard_checkins, dependent: :destroy
   has_many :yet_another_kards, through: :kard_checkins
 
-  attr_accessible :key, :name
+  attr_accessible :key, :name, :short
 
   before_validation :generate_key
 

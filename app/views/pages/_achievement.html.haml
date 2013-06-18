@@ -1,3 +1,4 @@
-.achievement{:class => achieved ? 'achieved' : ''}
-  .title{:style => "font-weight: bold"}= achievement.title
-  .description= achievement.description
+.m-achievement{:class => achieved ? 'as-achieved' : ''}
+  %i.m-achievement--icon{class: "icon-#{achievement.resources.first.short}"}
+  .m-achievement--title{:style => "font-weight: bold"}= achievement.title
+  .m-achievement--description= achievement.description

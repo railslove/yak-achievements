@@ -1,0 +1,55 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "glyphs": [
+    {
+      "uid": "500fc1f109021e4b1de4deda2f7ed399",
+      "css": "hack",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "3a26448b711645ba1abfc86c1a6e2f30",
+      "css": "coffee",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "30b79160618d99ce798e4bd11cafe3fe",
+      "css": "veggie",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "978aa8facd816df874039e139cb0cdde",
+      "css": "trophy",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "c2e02247804b8372740de0b76311f1ad",
+      "css": "drink",
+      "code": 59397,
+      "src": "typicons"
+    },
+    {
+      "uid": "uetwmlvm6z9eaot1t74vvsgrte9vwi0n",
+      "css": "speaker",
+      "code": 59398,
+      "src": "modernpics"
+    },
+    {
+      "uid": "d27bcf5c8638e4078aaadae1d49b6909",
+      "css": "meat",
+      "code": 59399,
+      "src": "maki"
+    },
+    {
+      "uid": "d8813acae9d35ada76fda399a6000587",
+      "css": "soccer",
+      "code": 59395,
+      "src": "maki"
+    }
+  ]
+}
