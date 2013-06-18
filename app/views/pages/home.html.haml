@@ -7,6 +7,6 @@
     / - Achievement.order('created_at desc').first(7).each do |achievement|
     - @achieved_achievements.each do |achieved_achievement|
       %li.m-achievement.as-achieved
-        %i.m-achievement--icon{class: "icon-#{achieved_achievement.achievement.resources.first.short}"}
+        %i.m-achievement--icon{class: achieved_achievement.achievement.title == 'Achievement 101' ? 'icon-trophy' : "icon-#{achieved_achievement.achievement.resources.first.short}"}
         .m-achievement--title= achieved_achievement.yet_another_kard.uid
         .m-achievement--text= achieved_achievement.achievement.title
