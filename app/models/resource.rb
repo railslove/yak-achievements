@@ -19,7 +19,7 @@ class Resource < ActiveRecord::Base
     end_time = Time.now + (59-Time.now.min).minutes # Nächste volle Stunde
     time_slots = {} # Jede Stunde zwischen 9 Uhr und jetzt
     while start_time < end_time do
-      time_slots[start_time] = self.kard_checkins.where(created_at: [start_time..(start_time + 1.hour)]).count
+      time_slots[start_time] = self.kard_checkins.where(created_at: [(start_time - 2.hour)..(start_time - 1.hour)]).count
       start_time = start_time + 1.hour
     end
     result = []
