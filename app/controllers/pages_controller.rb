@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @achieved_achievements = AchievedAchievement.last(5)
+    @achieved_achievements = AchievedAchievement.order('created_at desc').limit(5)
 
     @coffee = Resource.find_by_short("coffee").absolute_numbers_for_today
     @meat = Resource.find_by_short("meat").absolute_numbers_for_today
