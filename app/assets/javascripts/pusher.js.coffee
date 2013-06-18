@@ -7,13 +7,13 @@ $ ->
   status_channel = pusher.subscribe("status-monitor")
   checkin_channel = pusher.subscribe("yak")
 
-  $list = $('.m-achivement-list')
+  $list = $('.m-achievement-list')
   checkin_channel.bind "new_achievement", (data) ->
-    console.log data
     $item = $list.children().first().clone()
-    $item.find(".m-achivement--headline").text(data.yak)
-    $item.find(".m-achivement--text").text(data.title)
-    $item.find(".m-achivement--icon").attr('class', "m-achivement--icon icon-#{data.short}")
+    console.log $item.length
+    $item.find(".m-achievement--title").text(data.yak)
+    $item.find(".m-achievement--text").text(data.title)
+    $item.find(".m-achievement--icon").attr('class', "m-achievement--icon icon-#{data.short}")
     $list.prepend($item)
 
   status_channel.bind "checkin", (data) ->
