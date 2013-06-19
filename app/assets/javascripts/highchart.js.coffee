@@ -3,6 +3,7 @@ $ ->
   meat = $(".chart-container").data('meat')
   veggie = $(".chart-container").data('veggie')
   drink = $(".chart-container").data('drink')
+  soccer = $(".chart-container").data('soccer')
 
   $(".chart-container").highcharts
     chart:
@@ -38,5 +39,10 @@ $ ->
         name: "Drinks"
         data: drink
         color: '#4e56ff'
+      },
+      {
+        name: "Tablesoccer"
+        data: soccer
+        color: '#000'
       },
     ]
