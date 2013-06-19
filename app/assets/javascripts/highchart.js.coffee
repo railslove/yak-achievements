@@ -14,9 +14,17 @@ $ ->
     yAxis:
       title:
         text: "Checkins"
+      labels:
+        formatter: ->
+          parseInt(@value)
+
     xAxis:
       labels:
-          format: '{value}Uhr'
+        formatter: ->
+          if (@value == parseInt(@value))
+            "#{parseInt(@value)}:00 Uhr"
+          else
+            ""
 
     series: [
       {
