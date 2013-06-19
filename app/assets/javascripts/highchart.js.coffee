@@ -12,22 +12,16 @@ $ ->
       text: "Food and Drinks"
 
     yAxis:
+      allowDecimals: false
       title:
         text: "Checkins"
       labels:
-        formatter: ->
-          if (@value == parseInt(@value))
-            "#{parseInt(@value)}x"
-          else
-            ""
+        format: "{value}x"
 
     xAxis:
+      allowDecimals: false
       labels:
-        formatter: ->
-          if (@value == parseInt(@value))
-            "#{parseInt(@value)}:00 Uhr"
-          else
-            ""
+        format: "{value}:00 Uhr"
 
     series: [
       {
