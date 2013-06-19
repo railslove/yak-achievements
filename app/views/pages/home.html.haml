@@ -8,5 +8,7 @@
     - @achieved_achievements.each do |achieved_achievement|
       %li.m-achievement.as-achieved
         %i.m-achievement--icon{class: achieved_achievement.achievement.title == 'Achievement 101' ? 'icon-trophy' : "icon-#{achieved_achievement.achievement.resources.first.short}"}
+        - if achieved_achievement.achievement.settings.present? && achieved_achievement.achievement.settings[:count] > 1
+          .m-achievement--label= achieved_achievement.achievement.settings[:count]
         .m-achievement--title= achieved_achievement.yet_another_kard.uid
         .m-achievement--text= achieved_achievement.achievement.title
