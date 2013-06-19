@@ -16,7 +16,10 @@ $ ->
         text: "Checkins"
       labels:
         formatter: ->
-          parseInt(@value)
+          if (@value == parseInt(@value))
+            "#{parseInt(@value)}x"
+          else
+            ""
 
     xAxis:
       labels:
