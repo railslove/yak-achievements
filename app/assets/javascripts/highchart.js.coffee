@@ -1,7 +1,6 @@
 $ ->
   coffee = $(".chart-container").data('coffee')
   meat = $(".chart-container").data('meat')
-  veggie = $(".chart-container").data('veggie')
   drink = $(".chart-container").data('drink')
   soccer = $(".chart-container").data('soccer')
 
@@ -26,14 +25,9 @@ $ ->
       color: '#785200'
       },
       {
-        name: "Meat"
+        name: "Food"
         data: meat
         color: '#FF4800'
-      },
-      {
-        name: "Veggie"
-        data: veggie
-        color: '#6ED500'
       },
       {
         name: "Drinks"
