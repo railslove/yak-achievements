@@ -13,13 +13,13 @@ class ResourcesController < ApplicationController
       @resource.achievements.each do |achievement|
         # Trigger Pusher if new Achievement has been unlocked
         if achievement.process_achievement(@kard)
-          Pusher.trigger "yak", 'new_achievement', {yak:  @kard.uid, short: @kard.achievements.last.short, title: @kard.achievements.last.title}
+          WebsocketRails[:yak].trigger :new_achievement, {yak:  @kard.uid, short: @kard.achievements.last.short, title: @kard.achievements.last.title}
         end
       end
 
       # Send Response to Channel
-      Pusher.trigger(@resource.key, 'checkin', {yak_uid: @kard.uid})
-      Pusher.trigger('yak', 'checkin', {yak_uid: @kard.uid})
+      WebsocketRails[@resource.key].trigger :checkin, {yak_uid: @kard.uid}
+      WebsocketRails[:yak].trigger :checkin, {yak_uid: @kard.uid}
 
       send_response(checkins: @kard.resources.where(id: @resource.id).count)
     else

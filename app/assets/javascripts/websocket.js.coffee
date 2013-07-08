@@ -1,15 +1,13 @@
 $ ->
-  # Pusher.log = (message) ->
-  #   window.console.log message  if window.console and window.console.log
-
   $achievements = $('#achievements')
-  pusher = new Pusher("7075132451181dcab88f")
-  status_channel = pusher.subscribe("status-monitor")
-  checkin_channel = pusher.subscribe("yak")
+
+  dispatcher = new WebSocketRails("localhost:3000/websocket")
+
+  status_channel = dispatcher.subscribe("status-monitor")
+  checkin_channel = dispatcher.subscribe("yak")
 
   checkin_channel.bind "checkin", (data) ->
     location.reload(true)
-
 
   $list = $('.m-achievement-list')
   checkin_channel.bind "new_achievement", (data) ->
@@ -24,5 +22,3 @@ $ ->
   status_channel.bind "checkin", (data) ->
     window.console.log data
     window.location.href = '/status/'+ data.yak_uid
-
-

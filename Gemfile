@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'puma'
 gem 'pg'
-gem 'pusher'
+gem 'thin'
+gem 'websocket-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

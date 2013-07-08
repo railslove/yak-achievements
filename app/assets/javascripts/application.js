@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require highcharts
+//= require websocket_rails/main
 //= require_tree .
